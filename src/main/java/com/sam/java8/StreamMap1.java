@@ -25,7 +25,7 @@ public class StreamMap1 {
 
         //效果是一樣的
         List<String> collect1 = alpha.stream()
-                .map(x -> x.toUpperCase())//TODO 怎麼寫多行
+                .map(x -> x.toUpperCase())
                 .collect(Collectors.toList());
 
         System.out.println(collect);
@@ -35,5 +35,9 @@ public class StreamMap1 {
             MAP：
             資料的轉換。當你有一個方法(method)它的用途會將某個輸入資料轉換成另一個資料輸出時，map 可以讓你使用這個方法。
          */
+
+        alpha.stream()
+                .mapToDouble(String::length)
+                .forEach(System.out::println);
     }
 }
