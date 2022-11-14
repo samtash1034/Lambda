@@ -56,5 +56,16 @@ public class SortList {
         //先是正序(加 reversed)，然後倒序(reversed)
 
         employees.forEach(System.out::println);
+
+        //自訂義排序規則
+        employees.sort((em1,em2) -> {
+            if(em1.getAge() == em2.getAge()){
+                return 0;
+            }
+            return em1.getAge() - em2.getAge() > 0 ? -1:1;// -1 表示倒數
+        });
+        employees.forEach(System.out::println);
+        System.out.println("-----------");
+        employees.forEach(System.out::println);//年齡大到小
     }
 }

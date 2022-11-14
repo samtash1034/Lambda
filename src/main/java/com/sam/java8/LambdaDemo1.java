@@ -5,8 +5,19 @@ import java.util.List;
 
 public class LambdaDemo1 {
 
+    /*
+        函數式街口：
+        只能有一個抽象方法
+        允許定義默認default非抽象方法
+     */
+
+    @FunctionalInterface//去檢查這個interface是不是函數式街口
     interface Printer{
-        void printer(String val);
+        void printer(String val);//只能有一個抽象方法
+
+        default void printer2(){//允許 default 非抽象方法
+
+        }
     }
 
     public void printSomething(String something, Printer printer){
