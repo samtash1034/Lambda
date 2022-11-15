@@ -3,6 +3,7 @@ package com.sam.java8;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 public class SortMap {
@@ -37,5 +38,11 @@ public class SortMap {
                 );
         //將排序後的 Map 印出
         sortedMap.entrySet().forEach(System.out::println);
+
+        System.out.println("---treeMap---");
+        //TreeMap內的元素是有順序的，所以利用TreeMap排序也是可取的一種方法。您需要做的就是創建一個TreeMap對象，
+        // 並將數據從HashMap put到TreeMap中
+        Map<String, Object> sorted = new TreeMap<>(codes);
+        System.out.println(sorted);
     }
 }
